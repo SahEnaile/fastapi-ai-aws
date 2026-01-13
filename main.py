@@ -64,12 +64,12 @@ def read_document():
 def read_one_document(document_id : int) :
     return{
         "document_id" :
-        challengeModel.id
+        document_id
     }
     
 @app.post("/documents")
 def post_document(payload :challengeModel) :
     return{
         "document" :
-        challengeModel
+        payload
     }
