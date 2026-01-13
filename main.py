@@ -14,7 +14,7 @@ def read_item(item_id: int, q : str | None = None):
 
 @app.put("/items/{item_id}")
 def update_item(item_id : int, item : Item):
-    return {"item_name" : Item.name, "item_id" :item_id}
+    return {"item_name" : item.name, "item_id" :item_id}
 
 # ============================================================
 # MINI CHALLENGE — FASTAPI FIRST STEPS
@@ -52,12 +52,13 @@ def update_item(item_id : int, item : Item):
 # PATCH /documents/{document_id}
 # Allow partial updates: title OR content.
 # ============================================================
+documents = []
 
 @app.get("/documents")
 def read_document():
     return{
         "Documents" : 
-        challengeModel
+         documents
     }
     
 @app.get("/documents/{document_id}")
@@ -69,6 +70,9 @@ def read_one_document(document_id : int) :
     
 @app.post("/documents")
 def post_document(payload :challengeModel) :
+    
+    documents.append(payload)
+    
     return{
         "document" :
         payload
