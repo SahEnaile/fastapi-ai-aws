@@ -23,7 +23,6 @@ def read_all():
             detail="Error while fetching posts"
         )
 
-
 @router.post("/posts")
 def post_posts(payload: JsonApiModel):
     try:
