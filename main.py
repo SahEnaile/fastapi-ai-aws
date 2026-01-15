@@ -3,10 +3,12 @@ from Item import Item
 from models.challengeModel import challengeModel
 from fastapi import FastAPI
 from routers.posts import router as posts_router
+from routers.products import router as products_router
 
 app = FastAPI()
 
 app.include_router(posts_router)    
+app.include_router(products_router)
 
 @app.get("/")
 def read_hoot():
