@@ -10,3 +10,9 @@ class ProductService:
         data["products"] = available_products
 
         return data
+    
+    def get_a_product(self, data : dict) :
+        
+        if data["stock"] > 0 :
+            return data
+    
